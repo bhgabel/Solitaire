@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Solitaire">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_settings" />
+        <activity
             android:name=".DisplayMessageActivity"
-            android:parentActivityName=".MainActivity"
-            />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
