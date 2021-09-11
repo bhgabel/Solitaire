@@ -2,13 +2,15 @@ package com.solitaire;
 
 public class Card {
 
-    // List of card's variables
+    // List of Card object variables
     private final char suit;
     private final char rank;
+    protected boolean visible;
 
     public Card(char suit, char rank){
         this.suit = suit;
         this.rank = rank;
+        this.visible = false;
     }
 
     /**
@@ -27,6 +29,59 @@ public class Card {
     }
 
     /**
+     * Checks if current Card rank is lower than parameter Card
+     * @param c Card to compare to
+     * @return true if current card ranks lower than comparison, ie 2 < J
+     */
+    public boolean lessThan(Card c){
+        int idx1 = Deck.RANKS.indexOf(this.getRank());
+        int idx2 = Deck.RANKS.indexOf(c.getRank());
+
+        return idx1 < idx2;
+    }
+
+    /**
+     * Checks if current Card precedes Card c sequentially
+     * @param c Card to compare to
+     * @return true if current Card rank is one less than param, ie Q < K
+     */
+    public boolean oneLessRank(Card c){
+        int idx1 = Deck.RANKS.indexOf(this.getRank());
+        int idx2 = Deck.RANKS.indexOf(c.getRank());
+
+        return (idx1 + 1) == idx2;
+    }
+
+    /**
+     * Checks if current Card follows Card c sequentially
+     * @param c Card to compare to
+     * @return true if current Card rank is one less than param, ie 7 > 6
+     */
+    public boolean oneGreaterRank(Card c){
+        int idx1 = Deck.RANKS.indexOf(this.getRank());
+        int idx2 = Deck.RANKS.indexOf(c.getRank());
+
+        return (idx1 - 1) == idx2;
+    }
+
+    /**
+     * Checks if current Card is of opposite suit color and exactly one less rank than comparison
+     * @param c Card to compare to
+     * @return true if current Card and param are opposite colors and one less rank, ie 4S < 5H
+     */
+    public boolean validMove(Card c){
+        boolean oppositeColors = this.isBlack() && ! (c.isBlack());
+        return oppositeColors && this.oneLessRank(c);
+    }
+
+    /**
+     * Changes a Card to be visible
+     */
+    public void makeVisible(){
+        this.visible = true;
+    }
+
+    /**
      * @return suit of the card object as a char
      */
     public char getSuit(){
@@ -38,6 +93,10 @@ public class Card {
      */
     public char getRank(){
         return this.rank;
+    }
+
+    public boolean isVisible(){
+        return this.visible;
     }
 
     /**

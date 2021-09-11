@@ -3,12 +3,16 @@ package com.solitaire;
 import java.util.Random;
 
 public class Deck {
+
     public static final String SUITS = "SDCH";
     public static final String RANKS = "A234567890JQK";
     public static final int SIZE = 52;
 
     private Card[] deck;
 
+    /**
+     * Constructor for Deck object; Initializes Cards in new deck order (A -> K; S -> D -> C -> H)
+     */
     public Deck(){
         this.deck = new Card[SIZE];
 
@@ -22,6 +26,9 @@ public class Deck {
         }
     }
 
+    /**
+     * Shuffles the deck
+     */
     public void shuffle(){
         int index;
         Random rand = new Random();
@@ -35,4 +42,18 @@ public class Deck {
             }
         }
     }
+
+    /**
+     * Prints the deck to standard output;
+     * Only for testing
+     */
+    public void display(){
+        for(int i = 0; i < SIZE; i++){
+            System.out.print(this.deck[i].getRank() + "" + deck[i].getSuit() + " ");
+            if( (i+1) % 13 == 0){
+                System.out.println();
+            }
+        }
+    }
+
 }
