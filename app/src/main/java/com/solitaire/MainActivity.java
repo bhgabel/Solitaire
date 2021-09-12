@@ -21,11 +21,15 @@ public class MainActivity extends AppCompatActivity {
      * Called when the user taps the Send button
      * @param view
      */
-    //public void goToSettings(View view) {
+    public void goToSettings(View view) {
         /* Initial tutorial implementaion
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.editTextTextPersonName);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent); */
+
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
 }
