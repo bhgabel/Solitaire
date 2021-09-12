@@ -20,12 +20,7 @@ public class Card {
     public boolean isBlack(){
         char suit = this.getSuit();
 
-        if(suit == 'S' || suit == 'C'){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return suit == 'S' || suit == 'C';
     }
 
     /**

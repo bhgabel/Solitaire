@@ -8,7 +8,7 @@ public class Deck {
     public static final String RANKS = "A234567890JQK";
     public static final int SIZE = 52;
 
-    private Card[] deck;
+    protected Card[] deck;
 
     /**
      * Constructor for Deck object; Initializes Cards in new deck order (A -> K; S -> D -> C -> H)
@@ -27,10 +27,8 @@ public class Deck {
     }
 
     public Deck(Card[] d){
-        this.deck = new Card[d.length()];
-        for(int i = 0; i < this.deck.length(); i++) {
-            this.deck[i] = d[i];
-        }
+        this.deck = new Card[d.length];
+        System.arraycopy(d, 0, this.deck, 0, this.deck.length);
     }
 
     /**
