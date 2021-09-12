@@ -40,15 +40,6 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void cardCompare_Test(){
-        Card c1 = new Card('C', '2');
-        Card c2 = new Card('H', 'Q');
-
-        assertEquals(c1.lessThan(c2), true);
-        assertEquals(c2.lessThan(c1), false);
-    }
-
-    @Test
     public void oneLessRank_Test(){
         Card c1 = new Card('C', '2');
         Card c2 = new Card('H', 'Q');

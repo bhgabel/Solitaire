@@ -29,18 +29,6 @@ public class Card {
     }
 
     /**
-     * Checks if current Card rank is lower than parameter Card
-     * @param c Card to compare to
-     * @return true if current card ranks lower than comparison, ie 2 < J
-     */
-    public boolean lessThan(Card c){
-        int idx1 = Deck.RANKS.indexOf(this.getRank());
-        int idx2 = Deck.RANKS.indexOf(c.getRank());
-
-        return idx1 < idx2;
-    }
-
-    /**
      * Checks if current Card precedes Card c sequentially
      * @param c Card to compare to
      * @return true if current Card rank is one less than param, ie Q < K
@@ -72,6 +60,16 @@ public class Card {
     public boolean validMove(Card c){
         boolean oppositeColors = this.isBlack() && ! (c.isBlack());
         return oppositeColors && this.oneLessRank(c);
+    }
+
+    /**
+     * Checks if current card can be played on an ace pile
+     * @param c top Card in ace pile
+     * @return true if current Card is next sequential card of same suit
+     */
+    public boolean validMoveAce(Card c){
+        boolean sameSuit = this.getSuit() == c.getSuit();
+        return sameSuit && this.oneGreaterRank(c);
     }
 
     /**

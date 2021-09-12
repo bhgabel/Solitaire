@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     //public void goToSettings(View view) {
-        // Initial tutorial implementaion
-        /* Intent intent = new Intent(this, DisplayMessageActivity.class);
+        /* Initial tutorial implementaion
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.editTextTextPersonName);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);

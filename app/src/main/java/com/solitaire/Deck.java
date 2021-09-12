@@ -26,6 +26,13 @@ public class Deck {
         }
     }
 
+    public Deck(Card[] d){
+        this.deck = new Card[d.length()];
+        for(int i = 0; i < this.deck.length(); i++) {
+            this.deck[i] = d[i];
+        }
+    }
+
     /**
      * Shuffles the deck
      */
