@@ -49,6 +49,15 @@ public class Deck {
     }
 
     /**
+     * Gets the Card at position i
+     * @param i index
+     * @return Card at index i
+     */
+    public Card get(int i){
+        return this.deck[i];
+    }
+
+    /**
      * Prints the deck to standard output;
      * Only for testing
      */

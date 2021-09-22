@@ -24,6 +24,14 @@ public class Card {
     }
 
     /**
+     * Checks if Card is an Ace
+     * @return true if rank is Ace
+     */
+    public boolean isAce(){
+        return this.getRank() == 'A';
+    }
+
+    /**
      * Checks if current Card precedes Card c sequentially
      * @param c Card to compare to
      * @return true if current Card rank is one less than param, ie Q < K

@@ -77,4 +77,15 @@ public class ExampleUnitTest {
         c2 = new Card('H', 'A');
         assertEquals(c1.validMove(c2), false);
     }
+
+    @Test
+    public void idxCheck(){
+        int index = 0;
+        for(int i = 0; i < 7; i++){
+            for(int idx = 0; i+idx < 7; idx++){
+                System.out.print((i+idx) + ":" + index + ", ");
+                index++;
+            }
+        }
+    }
 }
